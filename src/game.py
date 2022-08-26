@@ -6,14 +6,20 @@ playerTurn = True
 row = 0
 column = 0
 gameCount = 0
+
+def printBoard(board):
+    for row in range(len(board)):
+        print(board[row])
+
 while not isOver:
+    printBoard(board)
     if(playerTurn):
-        row = input('Player 1: Enter chosen row')
-        col = input('Player 1: Enter chosen column')
+        row = int(input('Player 1: Enter chosen row'))
+        col = int(input('Player 1: Enter chosen column'))
         board[row][col] = 1
     else:
-        row = input('Player 2: Enter chosen row')
-        col = input('Player 2: Enter chosen column')
+        row = int(input('Player 2: Enter chosen row'))
+        col = int(input('Player 2: Enter chosen column'))
         board[row][col] = 2
     
     playerTurn = not playerTurn
