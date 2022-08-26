@@ -33,13 +33,22 @@ def win(board):
 while not isOver:
     printBoard(board)
     if(playerTurn):
-        row = int(input('Player 1: Enter chosen row'))
-        col = int(input('Player 1: Enter chosen column'))
-        board[row][col] = 1
+        row = int(input('Player 1: Enter chosen row: '))
+        col = int(input('Player 1: Enter chosen column: '))
+        if(board[row][col] == 0 and row > -1 and row < 3 and col > -1 and col < 3):
+            board[row][col] = 1
+        else:
+            print('Invalid Entry, please try again.')
+            continue
+
     else:
-        row = int(input('Player 2: Enter chosen row'))
-        col = int(input('Player 2: Enter chosen column'))
-        board[row][col] = 2
+        row = int(input('Player 2: Enter chosen row: '))
+        col = int(input('Player 2: Enter chosen column: '))
+        if(board[row][col] == 0 and row > -1 and row < 3 and col > -1 and col < 3):
+            board[row][col] = 2
+        else:
+            print('Invalid Entry, please try again.')
+            continue
     
     playerTurn = not playerTurn
     x = win(board)
@@ -48,6 +57,7 @@ while not isOver:
     if(x > 0 ):
         isOver = True
         print("Winner is: " + str(x))
-    elif(gameCount == 8):
+    elif(gameCount == 9):
         isOver = True
         print("Tie")
+printBoard(board)
