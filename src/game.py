@@ -1,5 +1,22 @@
 #from array import *;
 #board = [[0,0,0], [0,0,0], [0,0,0]]
+from tkinter import *
+root = Tk()
+root.title('Tic Tac Toe')
+root.geometry('550x550')
+game = Label(root, text = 'Welcome to Tic Tac Toe').grid()
+b00 = Button(root, bg="orange", width=25, height=10).grid(row=0,column=0)
+b01 = Button(root, bg="orange", width=25, height=10).grid(row=0,column=1)
+b02 = Button(root, bg="orange", width=25, height=10).grid(row=0,column=2)
+b10 = Button(root, bg="orange", width=25, height=10).grid(row=1,column=0)
+b11 = Button(root, bg="orange", width=25, height=10).grid(row=1,column=1)
+b12 = Button(root, bg="orange", width=25, height=10).grid(row=1,column=2)
+b20 = Button(root, bg="orange", width=25, height=10).grid(row=2,column=0)
+b21 = Button(root, bg="orange", width=25, height=10).grid(row=2,column=1)
+b22 = Button(root, bg="orange", width=25, height=10).grid(row=2,column=2)
+
+root.mainloop()
+
 import numpy as np
 board = np.zeros(shape = (3,3))
 isOver= False
