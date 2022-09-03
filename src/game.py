@@ -1,21 +1,22 @@
 #from array import *;
 #board = [[0,0,0], [0,0,0], [0,0,0]]
 from tkinter import *
-root = Tk()
-root.title('Tic Tac Toe')
-root.geometry('550x550')
-game = Label(root, text = 'Welcome to Tic Tac Toe').grid()
-b00 = Button(root, bg="orange", width=25, height=10).grid(row=0,column=0)
-b01 = Button(root, bg="orange", width=25, height=10).grid(row=0,column=1)
-b02 = Button(root, bg="orange", width=25, height=10).grid(row=0,column=2)
-b10 = Button(root, bg="orange", width=25, height=10).grid(row=1,column=0)
-b11 = Button(root, bg="orange", width=25, height=10).grid(row=1,column=1)
-b12 = Button(root, bg="orange", width=25, height=10).grid(row=1,column=2)
-b20 = Button(root, bg="orange", width=25, height=10).grid(row=2,column=0)
-b21 = Button(root, bg="orange", width=25, height=10).grid(row=2,column=1)
-b22 = Button(root, bg="orange", width=25, height=10).grid(row=2,column=2)
 
-root.mainloop()
+class boardGUI:
+    def __init__(self, sizeX = 550, sizeY = 550):
+        self.root = Tk()
+        self.root.title('Tic Tac Toe')
+        #root.geometry(str(sizeX) + 'x' + str(sizeY))
+    def createBoard(self, rows, cols):
+        for r in range(rows):
+            for c in range(cols):
+                Button(self.root, bg="orange", width=25, height=10).grid(row=r,column=c)
+
+
+board = boardGUI()
+boardGUI.createBoard(board, 3, 3)
+
+#board.mainloop()
 
 import numpy as np
 board = np.zeros(shape = (3,3))
